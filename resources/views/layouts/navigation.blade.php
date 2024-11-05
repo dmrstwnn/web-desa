@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('dashboard') }}" class="ml-6">
+                      <img src="/image/bms.png" alt="" class="" width="40" height="auto">
                     </a>
                 </div>
 
@@ -24,11 +24,14 @@
                             <ul class="flex font-semibold justify-between">
                                 <!-- Active Link = text-indigo-500
                                 Inactive Link = hover:text-indigo-500 -->
-                                <li class="md:px-4 md:py-2 text-indigo-500"><a href="#">Dashboard</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Search</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Explore</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">About</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Contact</a></li>
+                                <li class="md:px-4 md:py-2 text-indigo-500"><a href="#">Beranda</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Berita</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Profil</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Lembaga Desa</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Peraturan Desa</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Potensi</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Menu Publik</a></li>
+                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Pelayanan</a></li>
                             </ul>
                         </div>
                     </div>
