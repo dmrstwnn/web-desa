@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom underline animation */
+.hover-underline::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3b82f6; /* Sesuaikan warna */
+    transition: width 0.3s ease;
+  }
+  .hover-underline:hover::after {
+    width: 152px; /* Animasi penuh */
+  }

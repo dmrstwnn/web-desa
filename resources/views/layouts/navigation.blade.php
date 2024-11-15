@@ -1,12 +1,15 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
+        <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" class="ml-6">
-                      <img src="/image/bms.png" alt="" class="" width="40" height="auto">
+                    <a href="{{ route('dashboard') }}" class="ml-6 flex gap-8 items-center">
+                      <img src="/image/bms.png" alt="" class="w-14" height="auto">
+                      <div class="text-sm">
+                        <p>Desa Kalibenda Kec Ajibarang</p>
+                        <p class="font-extrabold">Kab Banyumas</p>
+                      </div>
                     </a>
                 </div>
 
@@ -18,8 +21,8 @@
                 </div> --}}
 
                         <!-- component -->
-                <nav class="w-100 px-8 md:px-auto justify-items-center">
-                    <div class="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+                <nav class="w-100 px-8 pl-64 md:px-auto justify-items-center">
+                    <div class="md:h-16 h-96 mx-auto md:px-4 container flex items-center justify-end flex-wrap md:flex-nowrap">
                         <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
                             <ul class="flex font-semibold justify-between">
                                 <!-- Active Link = text-indigo-500
@@ -27,18 +30,10 @@
                                 <li class="md:px-4 md:py-2 text-indigo-500"><a href="#">Beranda</a></li>
                                 <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Berita</a></li>
                                 <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Profil</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Lembaga Desa</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Peraturan Desa</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Potensi</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Menu Publik</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Pelayanan</a></li>
-                            </ul>
+                             </ul>
                         </div>
                     </div>
                 </nav>
-
-
-            </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">

@@ -4,86 +4,70 @@
             {{ __('Dashboard') }}
         </h2> --}}
 
-        <div class="bg-white border-b border-gray-100">
+        <div class="bg-white ">
             <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <h1 class="text-4xl font-extrabold text-gray-900">Selamat Datang di Desa Kalibenda</h1>
-                    <p class="mt-4 text-lg text-gray-600">Berita, informasi, dan kegiatan terbaru tentang desa Kalibenda.</p>
+                <div class="text-center my-4">
+                    <h1 class="text-2xl font-bold text-gray-900">Selamat Datang <span class="font-black">{{ Auth::user()->name}}</span></h1>
+                    <p class="mt-4 text-lg text-gray-600">Buat berita, informasi, dan kegiatan terbaru tentang desa Kalibenda.</p>
                 </div>
-    
-                <!-- Section: Berita Terbaru -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white shadow-lg rounded-lg p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">Berita Terbaru</h2>
-                        <p class="mt-4 text-gray-700">Berita terkini mengenai kegiatan dan perkembangan desa Kalibenda. Update terbaru bisa Anda lihat di sini.</p>
-                        <a href="#" class="mt-4 text-blue-600 hover:text-blue-800">Selengkapnya &rarr;</a>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">Agenda Kegiatan</h2>
-                        <p class="mt-4 text-gray-700">Berbagai acara dan kegiatan yang akan dilaksanakan di desa Kalibenda, pastikan Anda tidak ketinggalan!</p>
-                        <a href="#" class="mt-4 text-blue-600 hover:text-blue-800">Lihat Agenda &rarr;</a>
-                    </div>
-                    <div class="bg-white shadow-lg rounded-lg p-6">
-                        <h2 class="text-xl font-semibold text-gray-900">Layanan Desa</h2>
-                        <p class="mt-4 text-gray-700">Kalibenda menyediakan berbagai layanan untuk masyarakat desa, seperti pengurusan administrasi dan bantuan sosial.</p>
-                        <a href="#" class="mt-4 text-blue-600 hover:text-blue-800">Pelajari Layanan &rarr;</a>
-                    </div>
-                </div>
-    
-                <!-- Section: Fitur Desa -->
-                {{-- <div class="mt-16 text-center">
-                    <h2 class="text-3xl font-semibold text-gray-900">Fitur Desa Kalibenda</h2>
-                    <p class="mt-4 text-lg text-gray-600">Pelajari lebih lanjut tentang desa Kalibenda dan berbagai fitur yang Kalibenda tawarkan untuk mempermudah komunikasi dan kolaborasi.</p>
-                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 class="text-xl font-semibold text-gray-800">Peta Desa</h3>
-                            <p class="mt-4 text-gray-600">Lihat peta lengkap desa dan temukan berbagai fasilitas yang tersedia di sekitar Anda.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 class="text-xl font-semibold text-gray-800">Laporan Masyarakat</h3>
-                            <p class="mt-4 text-gray-600">Sampaikan laporan atau keluhan terkait dengan masalah yang ada di desa langsung ke pemerintah desa.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 class="text-xl font-semibold text-gray-800">Informasi Covid-19</h3>
-                            <p class="mt-4 text-gray-600">Update terbaru mengenai situasi Covid-19 di desa dan prosedur kesehatan yang perlu Anda ikuti.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h3 class="text-xl font-semibold text-gray-800">Pendaftaran Layanan</h3>
-                            <p class="mt-4 text-gray-600">Daftarkan diri Anda untuk layanan administrasi dan sosial yang Kalibenda tawarkan di desa.</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Section: Kontak -->
-                <div class="mt-16 bg-gray-100 p-8 rounded-lg text-center">
-                    <h2 class="text-3xl font-semibold text-gray-900">Hubungi Kalibenda</h2>
-                    <p class="mt-4 text-lg text-gray-600">Jika Anda memiliki pertanyaan atau ingin berkomunikasi dengan pemerintah desa, jangan ragu untuk menghubungi Kalibenda.</p>
-                    <div class="mt-8">
-                        <p class="text-gray-700">Email: desa@example.com</p>
-                        <p class="text-gray-700">Telepon: (021) 123-4567</p>
-                        <p class="text-gray-700">Alamat: Jl. Raya Desa No. 123, Desa Kalibenda</p>
-                    </div>
-                </div> --}}
             </div>
         </div>
+    
+        <section class="dark:bg-gray-900">
+            <div class="py-2 px-4 mx-auto max-w-screen-xl  lg:py-16 lg:px-6">
+                <div class="mx-auto max-w-screen-sm text-center lg:mb-8 mb-4">
+                    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400"></p>
+                    <div class="mt-4">
+                        <a href="/create" type="button" class="text-white py-3 bg-blue-700 hover:bg-blue-800 focus:ring-4
+                         focus:ring-blue-300 font-semibold rounded-lg text-lg px-5 me-2 mb-2 dark:bg-blue-600
+                          dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create something</a>
+                    </div>
+                </div> 
+    
+                <div class="grid gap-5 lg:grid-cols-3 grid-cols-1">
+                    @foreach ($articles as $article)
+                    <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                        <div class="flex justify-between items-center mb-5 text-gray-500">
+                            <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-full dark:bg-primary-200 dark:text-primary-800">
+                                Read Artikel
+                            </span>
+                            <span class="text-sm"> {{ \Carbon\Carbon::parse($article->created_at)->locale('id')->diffForHumans() }} </span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <img class="w-56 h-56" src="{{ $article->image }}" alt="Jese Leos avatar" />
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="font-medium dark:text-white">
+                                {{ $article->author }}
+                            </span>
+                        </div>
+                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">{{ $article->title }}</a></h2>
+                        <p class="mb-5 font-light text-gray-500 dark:text-gray-400">{{ Str::limit($article ['body'], 180) }}</p>
+                        <div class="flex justify-between items-center">
+                            <a href="/post/{{ $article->id }}" class="inline-flex items-center font-medium text-blue-600 dark:text-primary-500 hover:underline">
+                                Read more
+                                <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                           
+                        </div>
+                    </article> 
+                    @endforeach 
+                </div>
+            </div>
+        </section>
+
     </x-slot>
+</x-app-layout>
 
-    {{-- <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+
+        {{-- <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900">
+                        {{ __("You're logged in!") }}
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> --}}
-
-
-    {{-- @extends('layouts.app')
-
-@section('content')
-   
-@endsection --}}
-
-
-</x-app-layout>
+        </div> --}}
+        
+        
