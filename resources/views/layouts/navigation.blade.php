@@ -25,12 +25,29 @@
                     <div class="md:h-16 h-96 mx-auto md:px-4 container flex items-center justify-end flex-wrap md:flex-nowrap">
                         <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
                             <ul class="flex font-semibold justify-between">
-                                <!-- Active Link = text-indigo-500
-                                Inactive Link = hover:text-indigo-500 -->
-                                <li class="md:px-4 md:py-2 text-indigo-500"><a href="#">Beranda</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Berita</a></li>
-                                <li class="md:px-4 md:py-2 hover:text-indigo-400"><a href="#">Profil</a></li>
-                             </ul>
+                                <!-- Active Link = text-indigo-500 -->
+                                <li class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-400"><a href="#">Beranda</a></li>
+                                <li class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-400"><a href="#">Berita</a></li>
+                                <li class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-400"><a href="#">Profil</a></li>
+                                <!-- Dropdown -->
+                                <li class="relative" x-data="{ open: false }">
+                                    <button @click="open = !open" class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-500 flex items-center">
+                                        
+                                        <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
+                                        </svg>
+                                    </button>
+                                    <div 
+                                        x-show="open" 
+                                        @click.away="open = false" 
+                                        class="absolute left-0 w-40 mt-1 bg-white rounded-md shadow-lg">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 1</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 2</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 3</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            
                         </div>
                     </div>
                 </nav>

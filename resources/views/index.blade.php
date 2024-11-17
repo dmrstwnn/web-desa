@@ -11,17 +11,20 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/flowbite@1.3.3/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+        
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="antialiased">
         <div class="min-h-screen bg-white">
             
-            <nav x-data="{ open: false }" class="bg-transparent shadow-md fixed top-0 left-0 w-full z-50" style="background-color: rgb(114, 175, 135);">
-                <!-- Primary Navigation Menu -->
+            <nav id="navbar" class="fixed top-0 w-full bg-transparent transition-all duration-300 shadow-xs z-50">
                 <div class="w-full mx-auto items-center shadow-md">
                     <div class="h-16">
                         <div class="flex justify-between items-center">
@@ -29,7 +32,7 @@
                             <div class="shrink-0 flex">
                                 <a href="{{ route('dashboard') }}" class="ml-16 flex gap-8 items-center">
                                     <img src="/image/bms.png" alt="" class="h-12 w-auto">
-                                    <div class="text-sm text-white">
+                                    <div class="text-sm text-gray-800">
                                         <p>Desa Kalibenda Kec Ajibarang</p>
                                         <p class="font-bold">Kab Banyumas</p>
                                     </div>
@@ -39,12 +42,33 @@
                             <!-- Navigation Links -->
                             <nav class="w-100 pr-10 md:px-auto">
                                 <div class="md:h-16 h-16 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
-                                    <div class="text-white order-3 w-full md:w-auto md:order-2">
+                                    <div class="text-gray-800 order-3 w-full md:w-auto md:order-2">
                                         <ul class="flex font-semibold justify-between">
-                                            <li class="md:px-4 md:py-2 text-white hover:text-gray-200 transition duration-300 ease-in-out font-semibold"><a href="/index">Beranda</a></li>
-                                            <li class="md:px-4 md:py-2 text-white hover:text-gray-200 transition duration-300 ease-in-out font-semibold"><a href="/profil">Profil</a></li>
-                                            <li class="md:px-4 md:py-2 text-white hover:text-gray-200 transition duration-300 ease-in-out font-semibold"><a href="#">Lembaga Desa</a></li>
-                                            <li class="md:px-4 md:py-2 text-white hover:text-gray-200 transition duration-300 ease-in-out font-semibold"><a href="#">Peraturan Desa</a></li>
+                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                                <a href="/index">Beranda</a>
+                                            </li>
+                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                                <a href="/profil">Profil</a>
+                                            </li>
+                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                                <a href="#">Lembaga Desa</a>
+                                            </li>
+                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                                <a href="#">Peraturan Desa</a>
+                                            </li>
+                                            <li class="relative" x-data="{ open: false }">
+                                                <button @click="open = !open" class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 flex items-center">
+                                                    Menu
+                                                    <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
+                                                    </svg>
+                                                </button>
+                                                <div x-show="open" @click.away="open = false" class="absolute left-0 w-40 mt-1 bg-white rounded-md shadow-lg">
+                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 1</a>
+                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 2</a>
+                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 3</a>
+                                                </div>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -56,49 +80,66 @@
             
     <!-- Hero Section -->
     
-    <section id="home" class="bg-cover bg-center h-screen flex items-center justify-center relative" style="background-image: url('/image/kalibenda.jpg');">
-        <!-- Overlay dengan efek blur -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/image/kalibenda.jpg'); filter: blur(2px);">
-        </div>
-            <div class="text-center px-4 z-10">
-                    <h2 class="text-6xl md:text-5xl font-bold text-white mb-4">Selamat Datang di Desa Kalibenda</h2>
-                    <p class="text-lg text-white mb-16">Desa yang asri dengan berbagai potensi alam dan budaya.</p>
-                    <a href="#about" class="text-white hover:text-cyan-200 border border-white hover:bg-blue-600 hover:border-blue-600 transition-transform focus:ring-4 focus:outline-none focus:ring-blue-700 font-semibold rounded-full text-xl px-16 py-5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Jelajahi</a>
-                        
-                </div>
-            </section>
+    {{-- <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat">
+         --}}
+         <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat relative bg-cover" style="background-image: url('/image/kalibenda.jpg');">
+
+            <!-- Teks di tengah -->
+            <div class="relative text-center">
+                <h2 class="text-6xl text-effect md:text-5xl font-bold text-white mb-4 text-shadow-lg">Selamat Datang di Desa Kalibenda</h2>
+                <p class="text-lg text-white mb-16 text-shadow-md">Desa yang asri dengan berbagai potensi alam dan budaya.</p>
+                 <a href="#about" 
+                 class="inline-block text-white bg-blue-600 border border-transparent rounded-full text-xl font-semibold py-4 px-12 
+                        transition-all duration-300 ease-in-out transform 
+                        hover:bg-blue-700 hover:scale-110 hover:shadow-2xl hover:text-cyan-200 hover:shadow-blue-500 focus:outline-none 
+                        focus:ring-4 focus:ring-blue-300 active:scale-100 active:shadow-none 
+                        relative overflow-hidden">
+                  <span class="absolute inset-0 bg-blue-500 rounded-full transform scale-0 transition-all duration-300 ease-in-out 
+                              group-hover:scale-100"></span>
+                  <span class="relative z-10">Jelajahi</span>
+                  </a>                               
+            </div>
+        </section>
+
+        
+        
     
             <!-- Berita Section -->
-            <section id="berita" class="py-20 bg-white">
-                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-10">
-                        <h2 class="text-2xl font-bold text-gray-900">Berita Terbaru</h2>
-                        <p class="mt-4 text-black">Dapatkan informasi terbaru seputar kegiatan dan peristiwa di Desa Kalibenda.</p>
+            <section id="berita" class="pb-20 pt-16 bg-white">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-left mb-5">
+                        <h2 class="text-4xl font-bold hover-underline-berita text-gray-900 relative inline-block">
+                            {{-- <span class="absolute inset-x-0 bottom-0 h-1 bg-blue-600"></span> --}}
+                            Berita Terbaru
+                        </h2>
+                        <p class="mt-3 text-gray-600">Dapatkan informasi terbaru seputar kegiatan dan peristiwa di Desa Kalibenda.</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Card 1 -->
 
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         @foreach ($articles as $article)
-                        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div class="news-card max-w-5xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+                            <span class="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-1 rounded-bl ">Baru</span>
                             <a href="#">
                                 <!-- Gambar dengan ukuran responsif dan menyesuaikan tanpa merusak layout -->
-                                <img class="rounded-t-lg w-full h-48 object-cover" src="{{ $article->image }}" alt="" />
+                                <img class="rounded-t-lg w-full h-40 object-cover" src="{{ $article->image ?? '/image/placeholder.png' }}" alt="" />
                             </a>
-                            <div class="pr-4 pt-3 pl-4 m-3 pb-5">
-                                <span class="text-sm" > {{ \Carbon\Carbon::parse($article->created_at)->locale('id')->diffForHumans() }} </span>
+                            <div class="pr-2 pt-1 pl-2 m-3 pb-5">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($article->created_at)->locale('id')->translatedFormat('l, d F Y') }}</span>
+                                    <span class="text-sm font-medium dark:text-white">Oleh {{ $article->author }}</span>
+                                </div>
                                 <a href="#">
                                     <h5 class="mb-2 mt-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{{ $article->title }}</h5>
                                 </a>
-                                <p class="mb-10 font-light text-gray-700 dark:text-gray-400">{{ Str::limit($article ['body'], 100) }}</p>
-                                <a href="/post/{{ $article->id }}" class="inline-flex items-end px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    Read more
-                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                    </svg>
-                                </a>
-                                <span class="font-normal flex mt-2 bottom-0 dark:text-white">
-                                   Oleh {{ $article->author }}
-                                </span>
+                                <p class="mb-10 font-light text-base text-gray-700 dark:text-gray-400">{{ Str::limit($article ['body'], 100) }}</p>
+                                <a href="/post/{{ $article->id }}" 
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                     Read more
+                                     <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                     </svg>
+                                 </a>
+                                 
                             </div>
                         </div>
                         
@@ -139,19 +180,45 @@
 
 
 
-<!-- <script>
-    // JavaScript to change navbar background on scroll
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 100) {
-            nav.classList.add('bg-white', 'backdrop-blur-md', 'shadow-md');
-            nav.classList.remove('bg-transparent');
-        } else {
-            nav.classList.remove('bg-white', 'backdrop-blur-md', 'shadow-md');
-            nav.classList.add('bg-transparent');
-        }
+<script>
+    const navbar = document.querySelector('nav');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        navbar.classList.add('bg-white');
+        navbar.classList.add('text-black');
+        navbar.classList.remove('bg-transparent');
+        navbar.classList.remove('text-white');
+      } else {
+        navbar.classList.add('bg-transparent');
+        navbar.classList.add('text-white');
+        navbar.classList.remove('bg-white');
+        navbar.classList.remove('text-black');
+      }
     });
-</script> -->
+</script>
+<script>
+    document.querySelectorAll('.news-card').forEach((card) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }, { threshold: 0.2 });
+        card.classList.add('opacity-0', 'translate-y-10');
+        observer.observe(card);
+    });
+</script>
+<script>
+    * {
+        font-family: "Poppins", serif;
+    }
+</script>
+<script>
+    
+</script>
+
 
 </body>
 </html>

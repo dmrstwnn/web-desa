@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,63 @@
     height: 2px;
     background-color: #3b82f6; /* Sesuaikan warna */
     transition: width 0.3s ease;
-  }
-  .hover-underline:hover::after {
+}
+.hover-underline:hover::after {
     width: 152px; /* Animasi penuh */
-  }
+}
+
+.hover-underline-berita::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3b82f6; /* Sesuaikan warna */
+    transition: width 0.3s ease;
+}
+.hover-underline-berita:hover::after {
+    width: 264px; /* Animasi penuh */
+}
+
+#navbar {
+    backdrop-filter: blur(10px);
+}
+
+#navbar.sticky {
+    background-color: rgba(255, 255, 255, 0.9); /* Background semi-transparan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #mobile-menu {
+        display: block;
+    }
+}
+
+.news-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.opacity-0 {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.opacity-100 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}

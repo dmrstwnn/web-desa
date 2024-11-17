@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.3.3/dist/flowbite.min.js"></script>
     
-    <title>YourArticle</title>
+    <title>Web Desa</title>
     <style>
         html, body {
             height: 100%;
@@ -49,5 +49,6 @@
             Copyright © 2024 Made withDamar setiawan 
         </p>
     </footer>
+    
 </body>
 </html>
