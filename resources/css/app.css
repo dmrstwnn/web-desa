@@ -19,18 +19,33 @@
     width: 152px; /* Animasi penuh */
 }
 
+@keyframes underline-animation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%; /* Memenuhi panjang teks */
+    }
+}
+
+.hover-underline-berita {
+    position: relative;
+    display: inline-block;
+}
+
 .hover-underline-berita::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 4px;
     background-color: #3b82f6; /* Sesuaikan warna */
     transition: width 0.3s ease;
 }
-.hover-underline-berita:hover::after {
-    width: 264px; /* Animasi penuh */
+
+.hover-underline-berita.animate::after {
+    animation: underline-animation 4s ease forwards;
 }
 
 #navbar {
@@ -74,3 +89,32 @@
 body {
     font-family: "Poppins", sans-serif;
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out forwards; /* Ensure opacity stays at 1 */
+  }
+  
+  .animate-slideInUp {
+    animation: slideInUp 1s ease-in-out forwards; /* Ensure transform and opacity stay at final state */
+  }
+  
