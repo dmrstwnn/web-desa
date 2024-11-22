@@ -3,7 +3,7 @@
     <h3 class="flex justify-center text-4xl font-semibold p-5">Create Article</h3>
     
 
-<form class="max-w-sm mx-auto" method="POST" action="/addpost" enctype="multipart/form-data">
+<form class="max-w-2xl mx-auto" method="POST" action="/addpost" enctype="multipart/form-data">
     @csrf
     <div class="mb-5">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>

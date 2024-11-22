@@ -8,7 +8,8 @@ use App\Http\Controllers\ProfileController;
 
 
 Route::get('/', function () {
-    $articles = Post::all(); 
+    $articles = Post::latest()->limit(3)->get();
+
     return view('index', compact('articles'));
 });
 

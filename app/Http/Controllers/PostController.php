@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     public function posts () {
-        $articles = Post::all(); 
+        $articles = Post::latest()->get(); 
         return view('posts', compact('articles')) ;
     }
     public function index () {
-        $articles = Post::all(); 
+        $articles = Post::latest()->limit(3)->get();
         return view('index', compact('articles')) ;
     }
 
@@ -34,7 +34,7 @@ class PostController extends Controller
             'image' => $imagePath
             
         ]);
-        return redirect()->route('posts');
+        return redirect()->route('dashboard');
     }
 
     public function storeImage ($file): string{
@@ -90,7 +90,7 @@ class PostController extends Controller
         {
             $data = Post::findOrFail($id);
             $data->delete();
-            return redirect()->route('posts');
+            return redirect()->route('dasboard');
         }
 
         public function logout()

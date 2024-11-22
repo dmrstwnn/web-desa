@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html{
+    scroll-behavior: smooth;
+}
 /* Custom underline animation */
 .hover-underline::after {
     content: "";

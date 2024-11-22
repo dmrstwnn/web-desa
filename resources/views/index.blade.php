@@ -21,18 +21,18 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
+ 
     <body class="antialiased">
         <div class="min-h-screen bg-white">
-            
             <nav id="navbar" class="fixed top-0 w-full bg-transparent transition-all duration-300 shadow-xs z-50">
                 <div class="w-full mx-auto items-center shadow-md">
                     <div class="h-16">
                         <div class="flex justify-between items-center">
                             <!-- Logo -->
                             <div class="shrink-0 flex">
-                                <a href="{{ route('dashboard') }}" class="ml-16 flex gap-8 items-center">
-                                    <img src="/image/bms.png" alt="" class="h-12 w-auto">
-                                    <div class="text-sm text-gray-800">
+                                <a href="{{ route('dashboard') }}" class="ml-16 flex gap-4 items-center">
+                                    <img src="/image/bms.png" alt="" class="h-12 w-auto ">
+                                    <div class="text-sm ">
                                         <p>Desa Kalibenda Kec Ajibarang</p>
                                         <p class="font-bold">Kab Banyumas</p>
                                     </div>
@@ -42,36 +42,36 @@
                             <!-- Navigation Links -->
                             <nav class="w-100 pr-10 md:px-auto">
                                 <div class="md:h-16 h-16 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
-                                    <div class="text-gray-800 order-3 w-full md:w-auto md:order-2">
+                                    <div class="order-3 w-full md:w-auto md:order-2">
                                         <ul class="flex font-semibold justify-between">
-                                            <li class="relative font-semibold   " x-data="{ open: false }">
-                                                <button @click="open = !open" class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 flex items-center">
+                                            <li class="relative font-semibold transition duration-300 ease-in-out" x-data="{ open: false }">
+                                                <button @click="open = !open" class="md:px-4 md:py-2  flex items-center">
                                                     Beranda
                                                     <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
                                                     </svg>
                                                 </button>
                                                 <div x-show="open" @click.away="open = false" class="absolute left-0 w-40 mt-1 bg-white rounded-md shadow-lg">
-                                                    <a href="#berita" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Berita</a>
-                                                    <a href="#profil" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Profil</a>
-                                                    <a href="#lokasi" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Lokasi</a>
+                                                    <a href="#berita" class="block px-4 py-2 text-sm text-gray-900 hover:text-indigo-800">Berita Terkini</a>
+                                                    <a href="#profil" class="block px-4 py-2 text-sm text-gray-900 hover:text-indigo-800">Profil</a>
+                                                    <a href="#lokasi" class="block px-4 py-2 text-sm text-gray-900 hover:text-indigo-800">Lokasi</a>
                                                 </div>
                                             </li>
-                                            {{-- <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
-                                                <a href="/">Beranda</a>
-                                            </li> --}}
-                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                            <li class="md:px-4 md:py-2  transition duration-300 ease-in-out font-semibold">
+                                                <a href="/posts">Berita</a>
+                                            </li>
+                                            <li class="md:px-4 md:py-2  transition duration-300 ease-in-out font-semibold">
                                                 <a href="/profil">Profil</a>
                                             </li>
-                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                            {{-- <li class="md:px-4 md:py-2 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="#">Lembaga Desa</a>
                                             </li>
-                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                            <li class="md:px-4 md:py-2 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="#">Peraturan Desa</a>
-                                            </li>
+                                            </li> --}}
                                             
-                                            <li class="relative font-semibold" x-data="{ open: false }">
-                                                <button @click="open = !open" class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 flex items-center">
+                                            <li class="relative font-semibold transition duration-300 ease-in-out" x-data="{ open: false }">
+                                                <button @click="open = !open" class="md:px-4 md:py-2 hover:text-gray-900 flex items-center">
                                                     Menu
                                                     <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
@@ -96,11 +96,12 @@
     
     {{-- <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat">
          --}}
-         <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat relative bg-cover" style="background-image: url('/image/kalibenda.jpg');">
+         <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat relative bg-cover " style="background-image: url('/image/kalibenda.jpg');">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
             <!-- Teks di tengah -->
             <div class="relative text-center">
-                <h2 class="bg-blue-500 rounded-lg px-3 pb-2 bg-bottom text-6xl text-effect md:text-5xl font-bold text-white mb-4 text-shadow-lg">Selamat Datang di Desa Kalibenda</h2>
-                <p class=" text-lg text-white mb-16 text-shadow-md"><span class="bg-blue-500 rounded-md px-2 bg-bottom">Desa yang asri dengan berbagai potensi alam dan budaya.</span></p>
+                <h2 class=" rounded-lg px-3 pb-2 bg-bottom text-6xl text-effect md:text-5xl font-bold text-white mb-4 text-shadow-lg">Selamat Datang di Desa Kalibenda</h2>
+                <p class=" text-lg text-white mb-16 text-shadow-md"><span class=" rounded-md px-2 bg-bottom">Desa yang asri dengan berbagai potensi alam dan budaya.</span></p>
                  <a href="#about" 
                  class="inline-block text-white bg-blue-600 border border-transparent rounded-full text-xl font-semibold py-4 px-12 
                         transition-all duration-300 ease-in-out transform 
@@ -121,7 +122,7 @@
             <section id="berita" class="py-20 bg-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-left mb-5">
-                        <a href="/berita" id="hover-berita" class="text-4xl font-bold hover-underline-berita text-gray-900 relative inline-block">
+                        <a href="/posts" id="hover-berita" class="text-4xl font-bold hover-underline-berita text-gray-900 relative inline-block">
                             Berita Terbaru
                         </a>
                         <p class="mt-3 text-gray-600">Dapatkan informasi terbaru seputar kegiatan dan peristiwa di Desa Kalibenda.</p>
@@ -160,7 +161,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-14">
-                    <a href="/berita" 
+                    <a href="/posts" 
                        class="inline-flex text-center justify-center items-center px-7 py-4 text-base font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">
                         Lihat Semua Berita
                         <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">

@@ -30,7 +30,7 @@
                         <div class="flex justify-between items-center">
                             <!-- Logo -->
                             <div class="shrink-0 flex">
-                                <a href="{{ route('dashboard') }}" class="ml-16 flex gap-8 items-center">
+                                <a href="{{ route('dashboard') }}" class="ml-16 flex gap-4 items-center">
                                     <img src="/image/bms.png" alt="" class="h-12 w-auto">
                                     <div class="text-sm text-gray-800">
                                         <p>Desa Kalibenda Kec Ajibarang</p>
@@ -50,12 +50,12 @@
                                             <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="/profil">Profil</a>
                                             </li>
-                                            <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
+                                            {{-- <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="#">Lembaga Desa</a>
                                             </li>
                                             <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="#">Peraturan Desa</a>
-                                            </li>
+                                            </li> --}}
                                             
                                             <li class="relative font-semibold" x-data="{ open: false }">
                                                 <button @click="open = !open" class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 flex items-center">
@@ -95,12 +95,12 @@
                         Sejarah Desa Kalibenda
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <img src="/image/kalibenda.jpg" alt="Profil Desa" class="  w-full  rounded shadow-lg opacity-0 animate-fadeIn animate-duration-1000">
+                    <div class="pt-7 gap-8 items-center">
                         <!-- Gambar -->
-                        <img src="/image/kalibenda.jpg" alt="Profil Desa" class="  w-full  rounded shadow-lg opacity-0 animate-fadeIn animate-duration-1000">
                         
                         <!-- Konten Text -->
-                        <div class="flex flex-col justify-center">
+                        <div class="flex flex-col text-justify justify-center">
                             <p class="text-gray-900 leading-relaxed font-medium opacity-0 animate-fadeIn animate-duration-1000 animate-delay-400">
                                 <span class="ml-10"></span>Desa Kalibenda terletak di Kecamatan Ajibarang, Kabupaten Banyumas, Jawa Tengah, dan memiliki sejarah yang panjang serta budaya yang kental. Desa ini merupakan salah satu desa tua yang telah ada sejak masa kolonial Belanda, dan kini terus berkembang sebagai desa yang mempertahankan nilai-nilai tradisional.
                             </p>
@@ -119,7 +119,7 @@
             
 
             <section class="px-80 py-10" id="visi-misi">
-                <h1 class="font-black text-3xl text-primary uppercase">Visi Dan Misi</h1>
+                <h1 class="flex justify-center font-black text-3xl text-primary uppercase">Visi Dan Misi</h1>
     
                 <div id="visi" class="py-10 space-y-5">
                     <h1 class="font-bold uppercase text-xl">Visi</h1>

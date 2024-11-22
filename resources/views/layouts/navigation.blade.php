@@ -1,63 +1,29 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b shadow-md border-gray-100 fixed top-0 left-0 w-full z-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20 items-center">
+        <div class="flex justify-between h-16">
+            <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" class="ml-6 flex gap-8 items-center">
-                      <img src="/image/bms.png" alt="" class="w-14" height="auto">
-                      <div class="text-sm">
-                        <p>Desa Kalibenda Kec Ajibarang</p>
-                        <p class="font-extrabold">Kab Banyumas</p>
-                      </div>
+                    <a href="{{ route('dashboard') }}">
+                        <img src="/image/bms.png" class="w-10 h-10" alt="">
                     </a>
                 </div>
 
-                {{-- <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <!-- Navigation Links -->
+                <div class="space-x-8 py-3 px-3 sm:-my-px sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        <p class="text-black text-lg">{{ __('Desa Kalibenda') }}</p>
                     </x-nav-link>
-                </div> --}}
-
-                        <!-- component -->
-                <nav class="w-100 px-8 pl-64 md:px-auto justify-items-center">
-                    <div class="md:h-16 h-96 mx-auto md:px-4 container flex items-center justify-end flex-wrap md:flex-nowrap">
-                        <div class="text-gray-500 order-3 w-full md:w-auto md:order-2">
-                            <ul class="flex font-semibold justify-between">
-                                <!-- Active Link = text-indigo-500 -->
-                                <li class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-400"><a href="#">Beranda</a></li>
-                                <li class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-400"><a href="#">Berita</a></li>
-                                <li class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-400"><a href="#">Profil</a></li>
-                                <!-- Dropdown -->
-                                <li class="relative" x-data="{ open: false }">
-                                    <button @click="open = !open" class="md:px-4 md:py-2 text-gray-700 hover:text-indigo-500 flex items-center">
-                                        
-                                        <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
-                                        </svg>
-                                    </button>
-                                    <div 
-                                        x-show="open" 
-                                        @click.away="open = false" 
-                                        class="absolute left-0 w-40 mt-1 bg-white rounded-md shadow-lg">
-                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 1</a>
-                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 2</a>
-                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-indigo-400">Option 3</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            
-                        </div>
-                    </div>
-                </nav>
+                </div>
+            </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-black bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                            <div class="uppercase font-semibold">{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
