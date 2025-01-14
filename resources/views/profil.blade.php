@@ -23,7 +23,7 @@
     </head>
     <body class=" antialiased">
         <div class="min-h-screen bg-white">
-            
+
             <nav id="navbar" class="fixed top-0 w-full bg-white transition-all duration-300 shadow-xs z-50">
                 <div class="w-full mx-auto items-center shadow-md">
                     <div class="h-16">
@@ -38,7 +38,7 @@
                                     </div>
                                 </a>
                             </div>
-            
+
                             <!-- Navigation Links -->
                             <nav class="w-100 pr-10 md:px-auto">
                                 <div class="md:h-16 h-16 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
@@ -56,7 +56,7 @@
                                             <li class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="#">Peraturan Desa</a>
                                             </li> --}}
-                                            
+
                                             <li class="relative font-semibold" x-data="{ open: false }">
                                                 <button @click="open = !open" class="md:px-4 md:py-2 text-gray-800 hover:text-gray-900 flex items-center">
                                                     Menu
@@ -94,11 +94,11 @@
                     <p class="text-center md:text-4xl text-2xl text-gray-800 mb-2  font-black text-primary uppercase opacity-0 animate-slideInUp animate-duration-1000 animate-delay-200">
                         Sejarah Desa Kalibenda
                     </p>
-                    
+
                     <img src="/image/kalibenda.jpg" alt="Profil Desa" class="  w-full  rounded shadow-lg opacity-0 animate-fadeIn animate-duration-1000">
                     <div class="pt-7 gap-8 items-center">
                         <!-- Gambar -->
-                        
+
                         <!-- Konten Text -->
                         <div class="flex flex-col text-justify justify-center">
                             <p class="text-gray-900 leading-relaxed font-medium opacity-0 animate-fadeIn animate-duration-1000 animate-delay-400">
@@ -114,13 +114,13 @@
                     </div>
                 </div>
             </section>
-            
-            
-            
+
+
+
 
             <section class="px-80 py-10" id="visi-misi">
                 <h1 class="flex justify-center font-black text-3xl text-primary uppercase">Visi Dan Misi</h1>
-    
+
                 <div id="visi" class="py-10 space-y-5">
                     <h1 class="font-bold uppercase text-xl">Visi</h1>
                     <p class="text-center font-black">“ Meningkatkan Sumber Daya Manusia, Ekonomi dan Alam  yang dilandasi Akhlak Mulia serta Menciptakan kemudahan pelayanan di segala bidang sehingga tercipta masyarakat yang makmur dan sejahtera. ”</p>
@@ -153,7 +153,7 @@
                     <p>&copy; 2024 Desa Kalibenda.</p>
                 </div>
             </footer>
-   
+
 </div>
 
 <!-- <script>

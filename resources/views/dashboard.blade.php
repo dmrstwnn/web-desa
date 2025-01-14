@@ -4,6 +4,7 @@
             {{ __('Dashboard') }}
         </h2> --}}
 
+
         <div class="bg-white mt-24 ml-10 ">
             <div class="max-w-7xl text-left px-6 sm:px-6 lg:px-8">
                 <div class=" my-4">
@@ -12,7 +13,7 @@
                 </div>
             </div>
         </div>
-    
+
         <section class="dark:bg-gray-900">
             <div class="py-2 px-4 mx-auto max-w-screen-xl  lg:py-16 lg:px-6">
                 <div class="mx-auto max-w-screen-sm text-center lg:mb-8 mb-4">
@@ -22,11 +23,11 @@
                          focus:ring-blue-300 font-semibold rounded-lg text-lg px-5 me-2 mb-2 dark:bg-blue-600
                           dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create something</a>
                     </div>
-                </div> 
+                </div>
                 <h2 class="text-3xl font-bold uppercase border-b-2 border-gray-700 m-5" style="width: fit-content;">
                     Semua Berita
                 </h2>
-                
+
                 <div class="grid gap-5 lg:grid-cols-3 grid-cols-1">
                     @foreach ($articles as $article)
                     <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700">
@@ -48,22 +49,22 @@
                                 Edit Article
                             </a>
                             <a href="{{ route('delete', $article->id) }}" class="inline-flex items-center px-4 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 mt-4">
-                                hapus 
+                                hapus
                             </a>
                         </div>
-                    </article> 
-                    @endforeach 
+                    </article>
+                    @endforeach
                 </div>
             </div>
         </section>
-        
+
 
 
 
 
     </x-slot>
 
-    
+
 </x-app-layout>
 
 
@@ -76,5 +77,4 @@
                 </div>
             </div>
         </div> --}}
-        
-        
+

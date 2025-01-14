@@ -17,11 +17,11 @@
         <script src="https://cdn.jsdelivr.net/npm/flowbite@1.3.3/dist/flowbite.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-        
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
- 
+
     <body class="antialiased">
         <div class="min-h-screen bg-white">
             <nav id="navbar" class="fixed top-0 w-full bg-transparent transition-all duration-300 shadow-xs z-50">
@@ -38,7 +38,7 @@
                                     </div>
                                 </a>
                             </div>
-            
+
                             <!-- Navigation Links -->
                             <nav class="w-100 pr-10 md:px-auto">
                                 <div class="md:h-16 h-16 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
@@ -69,7 +69,7 @@
                                             <li class="md:px-4 md:py-2 hover:text-gray-900 transition duration-300 ease-in-out font-semibold">
                                                 <a href="#">Peraturan Desa</a>
                                             </li> --}}
-                                            
+
                                             <li class="relative font-semibold transition duration-300 ease-in-out" x-data="{ open: false }">
                                                 <button @click="open = !open" class="md:px-4 md:py-2 hover:text-gray-900 flex items-center">
                                                     Menu
@@ -91,33 +91,33 @@
                     </div>
                 </div>
             </nav>
-            
+
     <!-- Hero Section -->
-    
+
     {{-- <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat">
          --}}
          <section id="home" class="min-h-screen flex items-center justify-center bg-center bg-no-repeat relative bg-cover " style="background-image: url('/image/kalibenda.jpg');">
             <div class="absolute inset-0 bg-black opacity-40"></div>
             <!-- Teks di tengah -->
             <div class="relative text-center">
-                <h2 class=" rounded-lg px-3 pb-2 bg-bottom text-6xl text-effect md:text-5xl font-bold text-white mb-4 text-shadow-lg">Selamat Datang di Desa Kalibenda</h2>
+                <h2 class=" rounded-lg px-3 bg-bottom text-6xl text-effect md:text-5xl font-bold text-white mb-2 text-shadow-lg">Selamat Datang di Desa Kalibenda</h2>
                 <p class=" text-lg text-white mb-16 text-shadow-md"><span class=" rounded-md px-2 bg-bottom">Desa yang asri dengan berbagai potensi alam dan budaya.</span></p>
-                 <a href="#about" 
-                 class="inline-block text-white bg-blue-600 border border-transparent rounded-full text-xl font-semibold py-4 px-12 
-                        transition-all duration-300 ease-in-out transform 
-                        hover:bg-blue-700 hover:scale-110 hover:shadow-2xl hover:text-cyan-200 hover:shadow-blue-500 focus:outline-none 
-                        focus:ring-4 focus:ring-blue-300 active:scale-100 active:shadow-none 
+                 <a href="#about"
+                 class="inline-block text-white bg-blue-600 border border-transparent rounded-full text-xl font-semibold py-4 px-12
+                        transition-all duration-300 ease-in-out transform
+                        hover:bg-blue-700 hover:scale-110 hover:shadow-2xl hover:text-cyan-200 hover:shadow-blue-500 focus:outline-none
+                        focus:ring-4 focus:ring-blue-300 active:scale-100 active:shadow-none
                         relative overflow-hidden">
-                  <span class="absolute inset-0 bg-blue-500 rounded-full transform scale-0 transition-all duration-300 ease-in-out 
+                  <span class="absolute inset-0 bg-blue-500 rounded-full transform scale-0 transition-all duration-300 ease-in-out
                               group-hover:scale-100"></span>
                   <span class="relative z-10">Jelajahi</span>
-                  </a>                               
+                  </a>
             </div>
         </section>
 
-        
-        
-    
+
+
+
             <!-- Berita Section -->
             <section id="berita" class="py-20 bg-white">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,23 +145,23 @@
                                     <h5 class="mb-2 mt-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{{ $article->title }}</h5>
                                 </a>
                                 <p class="mb-10 font-light text-base text-gray-700 dark:text-gray-400">{{ Str::limit($article ['body'], 100) }}</p>
-                                <a href="/post/{{ $article->id }}" 
+                                <a href="/post/{{ $article->id }}"
                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                      Read more
                                      <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                      </svg>
                                  </a>
-                                 
+
                             </div>
                         </div>
-                        
+
                         @endforeach
-                        
+
                     </div>
                 </div>
                 <div class="text-center mt-14">
-                    <a href="/posts" 
+                    <a href="/posts"
                        class="inline-flex text-center justify-center items-center px-7 py-4 text-base font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">
                         Lihat Semua Berita
                         <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
@@ -185,10 +185,10 @@
                             <p class="text-gray-900 leading-relaxed font-medium">Pada masa penjajahan Belanda, Desa Kalibenda menjadi salah satu pusat perlawanan rakyat Banyumas......</p>
                             <a href="/profil" class="text-blue-600 mt-4 inline-flex items-center hover-underline relative text-base font-normal hover:text-blue-800 origin-center">Pelajari lebih lanjut &nbsp; &raquo;</a>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </section>
-            
+
             <section id="lokasi" class="bg-white pt-5">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:py-16 lg:px-8">
                     <div class="max-w-xl lg:max-w-4xl mx-auto text-center ">
@@ -198,7 +198,7 @@
                     <div class="mt-8 lg:mt-12">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div class="rounded-lg overflow-hidden">
-                                <iframe 
+                                <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15825.874726253829!2d109.096026!3d-7.4132665!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6561645c41abb7%3A0xb8d0961320615f12!2sKalibenda%2C%20Kec.%20Ajibarang%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1731939319425!5m2!1sid!2sid"
                                 width="100%" height="330" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
@@ -206,10 +206,10 @@
                                 <div class="max-w-full mx-auto rounded-lg overflow-hidden">
                                     <div class="px-6 py-4">
                                         <h3 class="text-lg font-medium text-gray-900">Alamat Kami</h3>
-                                        <p class="mt-1 text-gray-600">Kalibenda, 
+                                        <p class="mt-1 text-gray-600">Kalibenda,
                                             Kec. Ajibarang,
                                             Kabupaten Banyumas,<br>
-                                            Jawa Tengah,	
+                                            Jawa Tengah,
                                             53163.</p>
                                     </div>
                                 </div>
@@ -227,9 +227,9 @@
                     <p>&copy; 2024 Desa Kalibenda.</p>
                 </div>
             </footer>
-            
 
-</nav>     
+
+</nav>
 </div>
 
 
@@ -237,7 +237,7 @@
 
 <script> //navbar
     const navbar = document.querySelector('nav');
-    
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 220) {
         navbar.classList.add('bg-white');
@@ -252,7 +252,7 @@
       }
     });
 </script>
-<script>    //card 
+<script>    //card
     document.querySelectorAll('.news-card').forEach((card) => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

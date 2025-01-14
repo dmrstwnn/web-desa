@@ -9,7 +9,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-    safelist: ['text-white'],
+    safelist: ['text-white', "md:block"],
     theme: {
         extend: {
             fontFamily: {
